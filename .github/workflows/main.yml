@@ -12,9 +12,10 @@ jobs:
     steps:
       - name: Pring Hello message
         run: |
-         echo "Hello world from testing job > file1.txt" 
+         echo "Hello world from testing jobЭ > file1.txt
          ls -l
          cat file1.txt
+        
   
   my_deploy:
     runs-on: [ubuntu-latest]
