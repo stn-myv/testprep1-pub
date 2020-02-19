@@ -32,6 +32,11 @@ jobs:
       - name: Pring current directory
         run: ls -la
 
+      - name: Git clone my repo
+        uses: actions/checkout@v1
+      
+      - name: Pring current directory
+        run: ls -la
   
   my_deploy:
     runs-on: [ubuntu-latest]
@@ -43,5 +48,9 @@ jobs:
       - name: Printing deployment package
         run: echo "Deployment package is ${{env.DEPLOY_PACKAGE_NAME}}"
         
-  
-    
+      - name: Let's test some packages if they are here 1
+        run: aws --version
+
+      - name: Let's test some packages if they are here 2
+        run: zip
+
