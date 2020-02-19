@@ -11,11 +11,11 @@ jobs:
 
     steps:
       - name: Pring Hello message
-        run: echo "Hello world from testing job
+        run: echo "Hello world from testing job"
   my_deploy:
     runs-on: [ubuntu-latest]
     steps:
       - name: Pring Hello message
-        run: echo "Hello world from deploy job
+        run: echo "Hello world from deploy job"
   
     
