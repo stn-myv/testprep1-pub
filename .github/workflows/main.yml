@@ -11,14 +11,12 @@ jobs:
 
     steps:
       - name: Pring Hello message
-        run: |
-         echo "Hello world from testing jobЭ > file1.txt
-         ls -l
-         cat file1.txt
-        
+        run: echo "Hello world from testing jobЭ > file1.txt
+
   
   my_deploy:
     runs-on: [ubuntu-latest]
+    needs: [my_testing]
     steps:
       - name: Pring Hello message
         run: echo "Hello world from deploy job"
