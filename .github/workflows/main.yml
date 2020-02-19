@@ -1,4 +1,13 @@
+#------------------------
+#
+# My first CI/CD pipeline
+#
+#------------------------
+
 name: test-prep-actions
+env:
+  APPLICATION_NAME: "My repo deploy app"
+  DEPLOY_PACHAGE_NAME    : "Repo package file = ${{github.sha}}"
 
 on:
   push:
@@ -12,6 +21,13 @@ jobs:
     steps:
       - name: Pring Hello message
         run: echo "Hello world from testing job"
+        
+      - name: Execute few commands
+        run: |
+          echo "Hello message 1"
+          echo "Hello message 2"
+          echo "Hello message 3"
+          echo "A[[lication name is: ${{env.APPLICATION_NAME}}"
 
   
   my_deploy:
@@ -20,5 +36,9 @@ jobs:
     steps:
       - name: Pring Hello message
         run: echo "Hello world from deploy job"
+        
+      - name: Printing deployment package
+        run: echo "Deploymant package is: ${{env.DEPLOY_PACHAGE_NAME}}"
+        
   
     
