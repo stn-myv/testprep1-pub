@@ -28,6 +28,9 @@ jobs:
           echo "Hello message 2"
           echo "Hello message 3"
           echo "Application name is: ${{env.APPLICATION_NAME}}"
+          
+      - name: Pring current directory
+        run: ls -la
 
   
   my_deploy:
