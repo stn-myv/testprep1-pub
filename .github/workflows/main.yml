@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Pring Hello message
-        run: echo "Hello world from testing jobЭ > file1.txt
+        run: echo "Hello world from testing job"
 
   
   my_deploy:
