@@ -41,10 +41,24 @@ jobs:
   my_deploy:
     runs-on: [ubuntu-latest]
     needs: [my_testing]
+    
+    env:
+      VAR1: "My local variable VAR1 from my_deploy"
+      VAR2: "My local variable VAR2 from my_deploy"
+    
     steps:
       - name: Pring Hello message
         run: echo "Hello world from deploy job"
         
+      - name: Pront local VARs
+        run: |
+          echo "VAR1 =  ${{env.VAR1}}"
+          echo "VAR2 =  ${{env.VAR2}}"
+          echo "VAR3 - super local one =  $env.LOCAL_VAR"
+          
+      env:
+        LOCAL_VAR: "This is super local environment variable"
+      
       - name: Printing deployment package
         run: echo "Deployment package is ${{env.DEPLOY_PACKAGE_NAME}}"
         
