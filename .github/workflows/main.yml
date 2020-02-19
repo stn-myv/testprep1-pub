@@ -7,7 +7,7 @@
 name: test-prep-actions
 env:
   APPLICATION_NAME: "My repo deploy app"
-  DEPLOY_PACHAGE_NAME    : "Repo package file = ${{github.sha}}"
+  DEPLOY_PACKAGE_NAME    : "Repo package file = ${{github.sha}}"
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
           echo "Hello message 1"
           echo "Hello message 2"
           echo "Hello message 3"
-          echo "A[[lication name is: ${{env.APPLICATION_NAME}}"
+          echo "Application name is: ${{env.APPLICATION_NAME}}"
 
   
   my_deploy:
@@ -38,7 +38,7 @@ jobs:
         run: echo "Hello world from deploy job"
         
       - name: Printing deployment package
-        run: echo "Deploymant package is: ${{env.DEPLOY_PACHAGE_NAME}}"
+        run: echo "Deployment package is ${{env.DEPLOY_PACKAGE_NAME}}"
         
   
     
